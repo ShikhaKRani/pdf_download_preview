@@ -38,10 +38,10 @@ class _Pdf_downloadState extends State<Pdf_download> {
 
   Future download_PDF_from_url(Dio dio, String url, String savePath) async {
     try {
+      
       Response response = await dio.get(
         url,
         onReceiveProgress: showDownloadProgress,
-        //Received data with List<int>
         options: Options(
             responseType: ResponseType.bytes,
             followRedirects: false,
@@ -123,7 +123,9 @@ class _Pdf_downloadState extends State<Pdf_download> {
                   child: InkWell(
                     splashColor: Colors.grey,
                     onTap: () {
+
                       _pdfButtonClicked();
+
                     }, // button pressed
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
